@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>stock</title>
+  <style>
+  *{
+    margin:0px;
+    padding:0px;
+    fond-family: sans-serif;
+   }
+ body{
+    background-color:#26263b;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+   }
+  .main{
+    flex-basis:750px;
+    height:600px;
+    background-color:white;
+  }
+  .main h3{
+    padding:25px;
+    font-size:30px;
+  }
+  .main form{
+    padding:20px;
+  }
+  .form-outer{
+    margin-bottom:20px;
+  }
+  .form-outer label{
+    display:block;
+    
+  }
+  .form-outer input{
+    width:100%;
+    height:30px;
+  }
+  .form-outer button{
+    padding: 10px 0px;
+    width:100%;
+    background-color:#26263b;
+    color:white;
+    font-size:15px;
+  }
+
+  </style>
+</head>
+<body>
+ <div class="main"> 
+    <h3>ENTER INFO BUY/SELL</h3>
+   
+    <form method="post" id="form">
+      <div class="form-outer">
+        <label> Name of the piece </label>
+        <input
+          type="text" 
+          placeholder="Enter Name..."
+          name="piece"
+          required
+        >
+      </div>
+      <div class="form-outer">
+        <label> Buy</label>
+        <input
+          type="number"
+          placeholder="Enter Price Buy..."
+          name="buy-price"
+        >
+      </div>
+      
+      <div class="form-outer">
+        <label> Sell</label>
+        <input
+          type="number"
+          placeholder="Enter Price Sell..."
+          name="sell-price"
+        >
+      </div>
+      
+   
+      
+      <div class="form-outer">
+        <label> Quantity Buy </label>
+        <input 
+          type="number"
+          placeholder="Enter Quantity Buy..."
+          name="quantity-buy"
+        >
+      </div>
+      
+      <div class="form-outer">
+        <label> Quantity Sell</label>
+        <input
+          type="number"
+          placeholder="Enter Quantiy-sell..."
+          name="quantity-sell"
+        >
+      </div class="form-outer">
+      <div>
+        <label class="form-outer"> Enter Data
+      <input width="100%"
+        class="form-outer"
+        type="date"
+        name="data"
+      required>
+        </label>
+      </div>
+        
+      <div class="form-outer">
+   <button name="btn" type="submit">Addition</button>
+        
+      </form>
+
+</div>
+</body>
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycby8hs3MQiqZ9ECP6mbYGPi9_lgAIS7tcFb9MXRWaZhP5txNyaApGNmV8F9a9_Q8MbLl4g/exec';
+
+const form = document.forms['form'];
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => alert("Thank you!"))
+    .then(() => { window.location.reload(); })
+    .catch(error => console.error('Error!', error.message));
+});
+</script>
+</html>

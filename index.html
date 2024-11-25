@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>stock</title>
+  <style>
+  *{
+    margin:0px;
+    padding:0px;
+    font-family: sans-serif;
+   }
+  body{
+    background-color:#26263b;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+   }
+  .main{
+    flex-basis:500px;
+    height:400px;
+    background-color:white;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main h3{
+    padding:25px;
+    font-size:30px;
+    text-align: center;
+  }
+  .links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .links a{
+    color: #26263b;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #26263b; 
+    border-radius: 5px; 
+    width: 450px;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+ <div class="main"> 
+    <h3> <\ STOCK ></h3>
+   
+    <div class="links">
+      <a href="stock.html">BUY-SELL</a> 
+      <a href="#"id="protectedLink" >VIEW STOCK</a>  
+      <a href="https://parwr.github.io/Contact-Us/">CONTACT-ME</a>
+      
+</div>
+      <script>      
+        const correctPassword = "parwar"; 
+        document.getElementById("protectedLink").addEventListener("click", function(event) {
+            event.preventDefault(); 
+            const password = prompt(" ENTER PASSWORD : ");    
+            if (password === correctPassword) {
+                window.location.href = "https://docs.google.com/spreadsheets/d/1ZK_qMkgpVpXfZydOTxmgtgsK3inlxZmo4YmtSemd4Ps/edit?usp=drivesdk";
+            } else {
+                alert("Error!");
+            }
+        });
+    </script>
+</body>
+</html>
