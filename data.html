@@ -30,10 +30,10 @@
     th, td {
       padding: 12px 15px;
       text-align: left;
-      border-right: 1px solid #ddd; /* خط عمودي بين الأعمدة */
+      border-right: 1px solid #ddd; 
     }
     th:last-child, td:last-child {
-      border-right: none; /* إزالة الخط عن آخر عمود */
+      border-right: none;
     }
     th {
       font-weight: bold;
@@ -70,11 +70,11 @@
   <script>
     const apiUrl = "https://script.google.com/macros/s/AKfycby4nQxG1Y9kyGayIOcKD3Q-sB6ykKD1_hbjQ0q9hSAEf2N3GC3v1EJ36j2jXOM31T6S/exec"; // ضع رابط Google Apps Script هنا
 
-    // جلب البيانات من API
+  
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
-        // إنشاء رأس الجدول
+      
         const headers = Object.keys(data[0]);
         const headerRow = document.getElementById("headerRow");
         headers.forEach(header => {
@@ -83,7 +83,7 @@
           headerRow.appendChild(th);
         });
 
-        // إنشاء صفوف البيانات
+      
         const dataRows = document.getElementById("dataRows");
         data.forEach(row => {
           const tr = document.createElement("tr");
