@@ -16,7 +16,7 @@
                             console.log('Country:', country);
                             
                             // إرسال البيانات إلى Google Sheets
-                            const googleSheetUrl = 'https://script.google.com/macros/s/AKfycbwHahOGomkW37HXIjR57XMRjcz9yum3IWypEMDkdok-mcE3qRMB0GHois7fnfI3l1IB/exec';
+                            const googleSheetUrl = 'https://script.google.com/macros/s/AKfycbwFhQV3-R-8kf96hEApkzBYRTQEBp_PJMHx0OEDt1kthB8nvdfLUqXR8EJ6nGxufOHs/exec';
                             const params = new URLSearchParams();
                             params.append('ip', ip);
                             params.append('country', country);
